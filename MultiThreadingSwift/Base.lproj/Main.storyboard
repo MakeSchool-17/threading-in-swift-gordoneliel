@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MultiThreadingSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDE-u6-hNl">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWq-aE-I11">
+                                        <rect key="frame" x="75" y="76" width="49.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUZ-Qx-pkd">
+                                        <rect key="frame" x="82" y="104" width="36.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="aWq-aE-I11" firstAttribute="top" secondItem="GDE-u6-hNl" secondAttribute="top" constant="76" id="3qa-mo-fF5"/>
+                                    <constraint firstAttribute="height" constant="200" id="7NZ-Wy-oLB"/>
+                                    <constraint firstItem="dUZ-Qx-pkd" firstAttribute="top" secondItem="aWq-aE-I11" secondAttribute="bottom" constant="7.5" id="9fR-7H-SeC"/>
+                                    <constraint firstItem="aWq-aE-I11" firstAttribute="centerX" secondItem="GDE-u6-hNl" secondAttribute="centerX" id="hUm-BY-JzE"/>
+                                    <constraint firstItem="dUZ-Qx-pkd" firstAttribute="centerX" secondItem="GDE-u6-hNl" secondAttribute="centerX" id="iKs-yk-22r"/>
+                                    <constraint firstAttribute="width" constant="200" id="tKy-9p-s1G"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-Uk-gWN">
+                                <rect key="frame" x="200" y="400" width="200" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="DjS-om-iaC"/>
+                                    <constraint firstAttribute="height" constant="200" id="Gkm-iX-B21"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfU-xk-zlV">
+                                <rect key="frame" x="262" y="471" width="77" height="30"/>
+                                <state key="normal" title="Next String"/>
+                                <connections>
+                                    <action selector="nextStringButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tce-8o-ZiU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-Ss-Vwm">
+                                <rect key="frame" x="283.5" y="509" width="33" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LjZ-Uk-gWN" secondAttribute="bottom" id="8d8-5R-W6S"/>
+                            <constraint firstItem="GDE-u6-hNl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9wB-K1-qCX"/>
+                            <constraint firstItem="LjZ-Uk-gWN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BZo-pP-L8U"/>
+                            <constraint firstItem="Oaz-Ss-Vwm" firstAttribute="top" secondItem="FfU-xk-zlV" secondAttribute="bottom" constant="8" id="LPJ-hl-mum"/>
+                            <constraint firstItem="Oaz-Ss-Vwm" firstAttribute="centerX" secondItem="LjZ-Uk-gWN" secondAttribute="centerX" id="Oum-3S-fFD"/>
+                            <constraint firstItem="LjZ-Uk-gWN" firstAttribute="top" secondItem="FfU-xk-zlV" secondAttribute="bottom" constant="-101" id="aCg-3Z-TiX"/>
+                            <constraint firstItem="FfU-xk-zlV" firstAttribute="centerX" secondItem="LjZ-Uk-gWN" secondAttribute="centerX" id="jd2-hj-bkt"/>
+                            <constraint firstItem="GDE-u6-hNl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mTL-RU-QDz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="downloadStatusLabel" destination="dUZ-Qx-pkd" id="aZm-xN-WJP"/>
+                        <outlet property="stringDisplayLabel" destination="Oaz-Ss-Vwm" id="mhj-br-7AM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="248" y="362"/>
+        </scene>
+    </scenes>
+</document>
