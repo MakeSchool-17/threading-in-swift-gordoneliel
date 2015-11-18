@@ -22,6 +22,9 @@ class ViewController: UIViewController {
         
         downloadData()
     }
+    @IBAction func startOperationPressed(sender: UIButton) {
+        
+    }
     
     @IBAction func nextStringButtonTapped(sender: AnyObject) {
         currentStringIndex++
@@ -31,16 +34,16 @@ class ViewController: UIViewController {
     }
     
     func downloadData() {
-        let dispatch_groups = dispatch_group_create()
+        let updateLabelQueue = NSOperationQueue()
         
-        for _ in 1...self.operationCount {
-            dispatch_group_async(dispatch_groups, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { i in
+        for i in 1...self.operationCount {
+            let i = NSBlockOperation {
                 self.downloadStatusLabel.text = "\(i)/\(self.operationCount)"
                 sleep(1)
             }
+            i.queuePriority = .Low
+            updateLabelQueue.addOperations([i], waitUntilFinished: false)
         }
-        
-        dispatch_group_wait(dispatch_groups, DISPATCH_TIME_FOREVER)
         self.downloadStatusLabel.text = "Completed!"
         
         

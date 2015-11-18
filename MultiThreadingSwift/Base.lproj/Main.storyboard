@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -63,24 +64,59 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-Ss-Vwm">
-                                <rect key="frame" x="283.5" y="509" width="33" height="20.5"/>
+                                <rect key="frame" x="283" y="509" width="33" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GhS-NZ-4Ji">
+                                <rect key="frame" x="236" y="28" width="128" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz1-5q-KiW">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="64"/>
+                                        <animations/>
+                                        <state key="normal" title="Start Operation"/>
+                                        <connections>
+                                            <action selector="startOperationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bop-nU-IhG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGl-59-krv">
+                                        <rect key="frame" x="0.0" y="64" width="128" height="64"/>
+                                        <animations/>
+                                        <state key="normal" title="Stop Operation"/>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Pz1-5q-KiW" firstAttribute="top" secondItem="GhS-NZ-4Ji" secondAttribute="top" id="1At-av-HTb"/>
+                                    <constraint firstItem="xGl-59-krv" firstAttribute="top" secondItem="Pz1-5q-KiW" secondAttribute="bottom" id="K5V-EJ-VTN"/>
+                                    <constraint firstItem="Pz1-5q-KiW" firstAttribute="height" secondItem="xGl-59-krv" secondAttribute="height" id="P55-cC-zJe"/>
+                                    <constraint firstAttribute="bottom" secondItem="xGl-59-krv" secondAttribute="bottom" id="PO6-Dw-dSk"/>
+                                    <constraint firstAttribute="width" secondItem="GhS-NZ-4Ji" secondAttribute="height" multiplier="1:1" id="Qag-IJ-t2h"/>
+                                    <constraint firstItem="Pz1-5q-KiW" firstAttribute="width" secondItem="xGl-59-krv" secondAttribute="width" id="ZNq-bO-fXm"/>
+                                    <constraint firstItem="Pz1-5q-KiW" firstAttribute="leading" secondItem="GhS-NZ-4Ji" secondAttribute="leading" id="iPX-Za-Xr5"/>
+                                    <constraint firstItem="xGl-59-krv" firstAttribute="trailing" secondItem="Pz1-5q-KiW" secondAttribute="trailing" id="jWe-vx-aR8"/>
+                                    <constraint firstItem="xGl-59-krv" firstAttribute="leading" secondItem="Pz1-5q-KiW" secondAttribute="leading" id="p3a-CM-kdI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pz1-5q-KiW" secondAttribute="trailing" id="yfQ-cs-8te"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GDE-u6-hNl" firstAttribute="top" secondItem="GhS-NZ-4Ji" secondAttribute="bottom" constant="44" id="8aZ-96-Zba"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LjZ-Uk-gWN" secondAttribute="bottom" id="8d8-5R-W6S"/>
                             <constraint firstItem="GDE-u6-hNl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9wB-K1-qCX"/>
                             <constraint firstItem="LjZ-Uk-gWN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BZo-pP-L8U"/>
                             <constraint firstItem="Oaz-Ss-Vwm" firstAttribute="top" secondItem="FfU-xk-zlV" secondAttribute="bottom" constant="8" id="LPJ-hl-mum"/>
                             <constraint firstItem="Oaz-Ss-Vwm" firstAttribute="centerX" secondItem="LjZ-Uk-gWN" secondAttribute="centerX" id="Oum-3S-fFD"/>
                             <constraint firstItem="LjZ-Uk-gWN" firstAttribute="top" secondItem="FfU-xk-zlV" secondAttribute="bottom" constant="-101" id="aCg-3Z-TiX"/>
+                            <constraint firstItem="GhS-NZ-4Ji" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dDH-gB-896"/>
                             <constraint firstItem="FfU-xk-zlV" firstAttribute="centerX" secondItem="LjZ-Uk-gWN" secondAttribute="centerX" id="jd2-hj-bkt"/>
                             <constraint firstItem="GDE-u6-hNl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mTL-RU-QDz"/>
+                            <constraint firstItem="GhS-NZ-4Ji" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="vTm-0W-4xf"/>
                         </constraints>
                     </view>
                     <connections>
