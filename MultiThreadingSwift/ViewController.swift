@@ -31,12 +31,14 @@ class ViewController: UIViewController {
   }
   
   func downloadData() {
-    for i in 1...operationCount {
-      downloadStatusLabel.text = "\(i)/\(operationCount)"
-      sleep(1)
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0)) {
+        for i in 1...self.operationCount {
+            self.downloadStatusLabel.text = "\(i)/\(self.operationCount)"
+            sleep(1)
+        }
+        
+        self.downloadStatusLabel.text = "Completed!"
     }
-    
-    downloadStatusLabel.text = "Completed!"
   }
 }
 
